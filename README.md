@@ -1,4 +1,4 @@
-![](thumbnail.png)
+![image](https://github.com/user-attachments/assets/f2036697-8d0e-4652-90e2-426b989f94b7)
 
 ![](https://img.shields.io/github/license/alura-cursos/android-com-kotlin-personalizando-ui)
 
