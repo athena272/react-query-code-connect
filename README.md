@@ -1,40 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+![](thumbnail.png)
 
-## Getting Started
+![](https://img.shields.io/github/license/alura-cursos/android-com-kotlin-personalizando-ui)
 
-First, run the development server:
+# Título do Curso: React Query: Gerenciando HTTP State
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Curso prático de React Query, uma ferramenta poderosa para gerenciar o estado de operações HTTP em aplicações React. Com um foco específico no método GET e no uso do hook useQuery, este curso guiará você através de conceitos fundamentais até a implementação prática. Ideal para desenvolvedores que desejam melhorar a performance e a simplicidade de suas aplicações ao lidar com dados assíncronos.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🔨 Funcionalidades do Projeto
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+O curso abrange a integração do Back-end com o Front-end de um blog dinâmico:
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- Listagem de posts com paginação.
+- Exibição detalhada de cada post.
+- Integração com APIs usando fetch através do Ract-query.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## ✔️ Técnicas e Tecnologias Utilizadas
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+As principais técnicas e tecnologias abordadas são:
 
-## Learn More
+- `Introdução ao React-query`: compreensão como o React Query simplifica a gestão de estado para operações HTTP em aplicações React.
+- `Técnicas avançadas`: melhores práticas e técnicas avançadas para otimizar as requisições GET e a interação com APIs.
+- `Implementação com useQuery`: utilização do hook `useQuery` para realizar a integração de APIs, gerenciando carregamento, erros e cache.
+- `React-query Devtools`: configuração e utilização da ferramenta para facilitar a depuração e aumentar a visibilidade dos dados geridos pelo React-qury.
+- `Fetch API`: realizar requisições HTTP para buscar dados.
 
-To learn more about Next.js, take a look at the following resources:
+## 🎯 Desafios do Curso
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+Implementação de funcionalidades avançadas, como:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Consumo de uma API de posts usando React-query.
+- Retentativas de requisições que falham.
+- Prefetch de dados.
 
-## Deploy on Vercel
+## 🛠️ Abrir e Rodar o Projeto
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Após baixar o projeto, você pode abrir com seu editor de código preferido. Siga estes passos:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+- Abra o terminal no diretório do projeto.
+- Na raiz do projeto execute `docker compose up`.
+- Execute `yarn` para instalar as dependências.
+- Execute `yarn build` para contruir a aplicação.
+- Inicie o servidor de desenvolvimento com `yarn dev`.
+- Acesse `http://localhost:3000` no navegador para ver o projeto.
