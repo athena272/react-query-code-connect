@@ -1,7 +1,17 @@
 import Image from "next/image";
 import styles from "./comment.module.css";
 
-export const Comment = ({ comment }) => {
+type CommentProps = {
+  comment: {
+    author: {
+      avatar: string;
+      name: string;
+    };
+    text: string;
+  };
+};
+
+export default function Comment({ comment }: CommentProps) {
   return (
     <div className={styles.comment}>
       <Image
@@ -14,4 +24,4 @@ export const Comment = ({ comment }) => {
       <p>{comment.text}</p>
     </div>
   );
-};
+}

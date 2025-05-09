@@ -1,17 +1,38 @@
 "use client";
 
 import { useRef } from "react";
-import { Modal } from "../Modal";
+import { Modal, ModalHandle } from "../Modal";
 import styles from "./replymodal.module.css";
 import { Textarea } from "../Textarea";
 import { SubmitButton } from "../SubmitButton";
-import { Comment } from "../Comment";
+import Comment from "../Comment";
 
-export const ReplyModal = ({ comment, post }) => {
-  const modalRef = useRef(null);
+type Author = {
+  avatar: string;
+  name: string;
+};
+
+type CommentType = {
+  id: string | number;
+  author: Author;
+  text: string;
+};
+
+type PostType = {
+  id: string | number;
+  // Adicione mais campos conforme necessário
+};
+
+type ReplyModalProps = {
+  comment: CommentType;
+  post: PostType;
+};
+
+export default function ReplyModal({ comment, post }: ReplyModalProps) {
+  const modalRef = useRef<ModalHandle | null>(null);
 
   const openModal = () => {
-    modalRef.current.openModal();
+    modalRef.current?.openModal();
   };
 
   return (
@@ -38,4 +59,4 @@ export const ReplyModal = ({ comment, post }) => {
       </button>
     </>
   );
-};
+}

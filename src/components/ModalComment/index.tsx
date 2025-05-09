@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, FormEvent } from "react";
 import { IconButton } from "../IconButton";
 import { Modal } from "../Modal";
 import { Chat } from "../icons/Chat";
@@ -10,15 +10,24 @@ import styles from "./commentmodal.module.css";
 import { SubmitButton } from "../SubmitButton";
 import { Subheading } from "../Subheading";
 
-export const ModalComment = ({ onSubmit }) => {
-  const modalRef = useRef(null);
+type ModalRefType = {
+  openModal: () => void;
+  closeModal: () => void;
+};
 
-  const handleSubmit = (event) => {
+type ModalCommentProps = {
+  onSubmit: (event: FormEvent<HTMLFormElement>) => void;
+};
+
+export default function ModalComment({ onSubmit }: ModalCommentProps) {
+  const modalRef = useRef<ModalRefType | null>(null);
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
     onSubmit(event);
-    modalRef.current.closeModal();
+    modalRef.current?.closeModal();
   };
+
   return (
     <>
       <Modal ref={modalRef}>
@@ -35,9 +44,9 @@ export const ModalComment = ({ onSubmit }) => {
           </div>
         </form>
       </Modal>
-      <IconButton onClick={() => modalRef.current.openModal()}>
+      <IconButton onClick={() => modalRef.current?.openModal()}>
         <Chat />
       </IconButton>
     </>
   );
-};
+}

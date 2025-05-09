@@ -1,12 +1,35 @@
 import Image from "next/image";
-import { Avatar } from "../Avatar";
+import Avatar from "../Avatar";
 import { Star } from "../icons/Star";
 import styles from "./cardpost.module.css";
 import Link from "next/link";
-import { ThumbsUpButton } from "./ThumbsUpButton";
-import { ModalComment } from "../ModalComment";
+import ThumbsUpButton from "./ThumbsUpButton";
+import ModalComment from "../ModalComment";
 
-export const CardPost = ({ post, highlight, rating, category, isFetching }) => {
+type Author = {
+  avatar: string;
+  username: string;
+};
+
+type Post = {
+  cover: string;
+  title: string;
+  body: string;
+  slug: string;
+  likes: number;
+  comments: Array<unknown>; // ou tipar melhor se souber a estrutura dos comentários
+  author: Author;
+};
+
+type CardPostProps = {
+  post: Post;
+  highlight?: boolean;
+  rating?: number;
+  category?: string;
+  isFetching?: boolean;
+};
+
+export default function CardPost({ post, highlight = false, rating, category, isFetching = false }: CardPostProps) {
   return (
     <article className={styles.card} style={{ width: highlight ? 993 : 486 }}>
       <header className={styles.header}>
@@ -30,7 +53,7 @@ export const CardPost = ({ post, highlight, rating, category, isFetching }) => {
             <p>{post.likes}</p>
           </form>
           <div>
-            <ModalComment />
+            <ModalComment onSubmit={(e) => console.log("Comentário enviado!", e)} />
             <p>{post.comments.length}</p>
           </div>
           {rating && (

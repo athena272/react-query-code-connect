@@ -1,14 +1,13 @@
 import styles from "./button.module.css";
-import { ReactNode } from "react";
+import { ReactNode, ButtonHTMLAttributes } from "react";
 
 type ButtonProps = {
   children: ReactNode;
-  disable?: boolean;
-};
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
-export default function Button({ children, disable = false }: ButtonProps) {
+export default function Button({ children, className, ...rest }: ButtonProps) {
   return (
-    <button className={styles.btn} disabled={disable}>
+    <button {...rest} className={`${styles.btn} ${className ?? ""}`}>
       {children}
     </button>
   );
